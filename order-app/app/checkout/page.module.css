@@ -1,49 +1,307 @@
-/* app/checkout/page.module.css */
-
-.checkout {
-  max-width: 400px;
-  margin: 2rem auto;
-  padding: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+.page {
+  min-height: 100vh;
+}
+.demoNotice { padding:10px 5vw; background:#a5402c; color:#fff; text-align:center; font-size:13px; font-weight:800; }
+.safeNote { padding:14px; border-radius:8px; background:#e4eee7; color:#405c4f; line-height:1.7; }
+.mockAddress { padding:18px; border:1px dashed #a9a195; border-radius:8px; background:#fffdf8; color:#747b76; line-height:1.8; }
+.paymentChoice { display:grid!important; grid-template-columns:auto 1fr; align-items:start; gap:14px!important; padding:16px; border:1px solid #cbc4b8; border-radius:9px; background:#fffdf8; cursor:pointer; }
+.paymentChoice input { width:18px; height:18px; padding:0; }
+.paymentChoice span { display:flex; flex-direction:column; gap:5px; }
+.paymentChoice small { color:#69736e; font-size:13px; line-height:1.5; }
+.identity { margin-top:15px; padding:18px; border-radius:9px; background:#f0dfd7; }
+.identity p { color:#6e574e; line-height:1.7; }
+.identity label { display:flex; flex-direction:row; align-items:center; gap:10px; }
+.identity input { width:18px; height:18px; padding:0; }
+.order:disabled { opacity:.45; cursor:not-allowed; }
+.page > header {
+  height: 82px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5vw;
+  border-bottom: 1px solid #d4cdbf;
+}
+.page > header button {
+  border: 0;
+  background: none;
+}
+.page > header b {
+  font: 18px Georgia;
+  letter-spacing: 0.12em;
+}
+.page > header b small {
+  display: block;
+  font: 7px Arial;
   text-align: center;
 }
-
+.page > header > span,
+.eyebrow {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: #a5402c;
+}
+.page > main {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  max-width: 1180px;
+  margin: auto;
+}
+.page main > section {
+  padding: 75px 7vw 100px 0;
+}
+.page h1 {
+  font: 44px Georgia;
+  margin: 14px 0 45px;
+}
+.page fieldset {
+  border: 0;
+  border-top: 1px solid #cbc4b8;
+  padding: 28px 0 35px;
+}
+.page legend {
+  font: 22px Georgia;
+}
+.page legend i {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  background: #263a31;
+  color: white;
+  border-radius: 50%;
+  font: 12px Arial;
+}
+.page label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 11px;
+  margin: 16px 0;
+}
+.page input {
+  padding: 14px;
+  background: #fffdf8;
+  border: 1px solid #cbc4b8;
+}
+.two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.radio {
+  display: flex !important;
+  flex-direction: row !important;
+}
+.order {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 20px;
+  background: #a5402c;
+  color: white;
+  border: 0;
+}
+.page aside {
+  background: #e7e1d5;
+  padding: 75px 45px;
+  min-height: calc(100vh - 82px);
+}
+.page aside h2 {
+  font: 30px Georgia;
+}
+.item {
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 0;
+  border-bottom: 1px solid #c8c0b3;
+}
+.item > span {
+  height: 60px;
+  display: grid;
+  place-items: center;
+  font: 55px Georgia;
+}
+.itemImage img {
+  object-fit: cover;
+}
+.itemImage {
+  position: relative;
+  width: 64px;
+  height: 60px;
+}
+.itemImage > b {
+  display: grid;
+  width: 64px;
+  height: 60px;
+  place-items: center;
+  border-radius: 8px;
+  background: #e5e7df;
+  color: #263a31;
+  font-size: 28px;
+}
+.giftNotice {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 18px 0 22px;
+  padding: 15px 17px;
+  border: 1px solid #a8c6b1;
+  border-radius: 9px;
+  background: #e4efe6;
+}
+.giftNotice span {
+  color: #506158;
+  font-size: 13px;
+}
+.emptyCart {
+  border-top: 1px solid #cbc4b8;
+  padding: 35px 0;
+}
+.emptyCart span {
+  font: 25px Georgia;
+}
+.emptyCart p {
+  color: #6c746f;
+  font-size: 12px;
+}
+.emptyCart button {
+  margin-top: 16px;
+  padding: 14px 20px;
+  border: 0;
+  background: #263a31;
+  color: white;
+}
+.item div {
+  display: flex;
+  flex-direction: column;
+}
+.item small {
+  font-size: 9px;
+}
 .total {
-  font-size: 1.25rem;
-  margin: 1.5rem 0;
+  margin-top: 25px;
 }
-
-.confirmButton {
-  padding: 0.75rem 1.5rem;
-  background-color: #10b981;
-  color: #fff;
-  border: none;
-  border-radius: 0.375rem;
-  cursor: pointer;
+.total p {
+  display: flex;
+  justify-content: space-between;
 }
-
-.thankyou {
-  max-width: 400px;
-  margin: 2rem auto;
-  padding: 2rem;
+.total p:last-child {
+  border-top: 1px solid #aaa295;
+  padding-top: 18px;
+}
+.total strong {
+  font: 24px Georgia;
+}
+.done {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
   text-align: center;
+  background: #263a31;
+  color: #f5f1e8;
+  padding: 30px;
+}
+.done > div {
+  width: 70px;
+  height: 70px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #d5a17e;
+  border-radius: 50%;
+  font-size: 30px;
+  margin: auto;
+}
+.done h1 {
+  font: 48px Georgia;
+}
+.done p {
+  line-height: 2;
+  color: #bbc5bf;
+}
+.done button {
+  margin: 25px auto;
+  background: #a5402c;
+  color: white;
+  border: 0;
+  padding: 16px 24px;
+}
+@media (max-width: 800px) {
+  .page > header > span {
+    display: none;
+  }
+  .page > main {
+    grid-template-columns: 1fr;
+  }
+  .page main > section {
+    padding: 50px 22px;
+  }
+  .page aside {
+    padding: 50px 22px;
+    grid-row: 1;
+    min-height: 0;
+  }
+  .two {
+    grid-template-columns: 1fr;
+  }
+  .page h1 {
+    font-size: 36px;
+  }
 }
 
-.thankyou h1 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+/* Larger, clearer checkout */
+.page {
+  background: #f8f5ee;
+  color: #183128;
 }
-
-.thankyou p {
-  margin-bottom: 1.5rem;
+.page > header {
+  height: 94px;
+  background: #fbf9f4;
 }
-
-.thankyou button {
-  padding: 0.5rem 1rem;
-  background-color: #2563eb;
-  color: #fff;
-  border: none;
-  border-radius: 0.375rem;
-  cursor: pointer;
+.page > header button {
+  font-size: 15px;
+}
+.page > header b {
+  font-size: 20px;
+}
+.page > header b small,
+.page > header > span,
+.eyebrow {
+  font-size: 11px;
+}
+.page h1 {
+  font-size: clamp(42px, 5vw, 58px);
+}
+.page label {
+  font-size: 15px;
+}
+.page input {
+  padding: 17px;
+  font-size: 16px;
+  border-radius: 7px;
+}
+.page legend {
+  font-size: 27px;
+}
+.radio {
+  padding: 16px;
+}
+.order {
+  padding: 20px 22px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+.page aside h2 {
+  font-size: 36px;
+}
+.item div b {
+  font-size: 18px;
+}
+.item div small,
+.item strong {
+  font-size: 13px;
+}
+.total p {
+  font-size: 15px;
 }
