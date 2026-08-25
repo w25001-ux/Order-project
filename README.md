@@ -13,6 +13,10 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?style=flat-square&logo=typescript&logoColor=white)
 ![Portfolio](https://img.shields.io/badge/Portfolio-Demo-a6402d?style=flat-square)
 
+### [公開サイトを見る →](https://aa-guitar-store.vercel.app)
+
+**Live Demo:** [aa-guitar-store.vercel.app](https://aa-guitar-store.vercel.app)
+
 </div>
 
 > [!IMPORTANT]
