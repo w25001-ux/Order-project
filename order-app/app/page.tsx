@@ -395,8 +395,10 @@ export default function Home() {
           <a href="#support">Support</a>
         </nav>
         <div className={styles.headerActions}>
-          <button onClick={changeLanguage}>{lang === "ja" ? "EN" : "日本語"}</button>
-          <button onClick={() => router.push(`/history?lang=${lang}`)}>{ui.history}</button>
+          <button className={styles.languageButton} onClick={changeLanguage} aria-label={lang === "ja" ? "表示言語を英語に変更" : "表示言語を日本語に変更"}>
+            <span aria-hidden="true">A</span><b>{lang === "ja" ? "English" : "日本語"}</b>
+          </button>
+          <button className={styles.historyButton} onClick={() => router.push(`/history?lang=${lang}`)}>{ui.history}</button>
         </div>
         <a className={styles.cartLink} href="#cart">
           Bag <b>{count}</b>

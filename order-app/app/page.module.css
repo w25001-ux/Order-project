@@ -11,8 +11,13 @@
   font-size: 13px;
   font-weight: 800;
 }
-.headerActions { display:flex; gap:8px; }
-.headerActions button { padding:9px 11px; border:1px solid #b9b1a4; border-radius:6px; background:transparent; color:var(--green); font-weight:700; cursor:pointer; }
+.headerActions { display:flex; align-items:center; gap:9px; flex-shrink:0; }
+.headerActions button { min-height:44px; border-radius:999px; font-weight:800; cursor:pointer; transition:transform .2s ease, box-shadow .2s ease, background .2s ease; }
+.headerActions button:hover { transform:translateY(-1px); }
+.languageButton { display:flex; align-items:center; gap:8px; padding:6px 15px 6px 7px; border:1px solid #173e31; background:#173e31; color:#fff; box-shadow:0 5px 14px #173e3124; }
+.languageButton span { display:grid; width:30px; height:30px; place-items:center; border-radius:50%; background:#fff; color:#173e31; font:700 14px Georgia,serif; }
+.languageButton b { font-size:13px; letter-spacing:.02em; }
+.historyButton { padding:9px 15px; border:1px solid #c8bfb1; background:#fffaf3; color:var(--green); }
 .header {
   height: 88px;
   display: flex;
@@ -1091,11 +1096,11 @@
   line-height: 1.6;
   text-align: center;
 }
-@media (max-width: 1150px) {
+@media (max-width: 1320px) {
   .nav {
     display: none;
   }
-  .headerActions button { padding:8px; }
+  .header { padding-inline:clamp(20px,4vw,52px); }
   .grid,
   .saleGrid,
   .accessoryGrid {
@@ -1139,6 +1144,13 @@
   .brand {
     font-size: 15px;
   }
+  .header { height:82px; padding-inline:16px; gap:10px; }
+  .mark { width:38px; height:38px; font-size:23px; }
+  .brand small { display:none; }
+  .languageButton { padding-right:8px; }
+  .languageButton b { display:none; }
+  .historyButton { display:none; }
+  .cartLink { margin-left:auto; }
   .hero h1 {
     font-size: 48px;
   }
